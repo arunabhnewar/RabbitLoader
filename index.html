@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Console | RabbitLoader</title>
+
+    <!-- Global stylesheets -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      href="./account/common/global_assets/css/icons/icomoon/styles.css"
+      rel="stylesheet"
+      type="text/css" />
+    <!-- <link href="/account/common/global_assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css"> -->
+    <link
+      href="./account/common/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      href="./account/common/css/bootstrap_limitless.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      href="./account/common/css/layout.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      href="./account/common/css/components.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      href="./account/common/css/colors.min.css"
+      rel="stylesheet"
+      type="text/css" />
+    <link
+      href="./account/common/css/rabbitloader.css"
+      rel="stylesheet"
+      type="text/css" />
+    <!-- /global stylesheets -->
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" /> -->
+    <meta name="theme-color" content="#6b71fb" />
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      sizes="any"
+      href="/assets/favicons/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicons/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/favicons/android-chrome-192x192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicons/android-chrome-512x512.png" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="180x180"
+      href="/assets/favicons/apple-touch-icon-180x180.png" />
+    <script>
+      const LUT = 1708423744;
+    </script>
+  </head>
+
+  <body
+    class=""
+    data-new-gr-c-s-check-loaded="14.1155.0"
+    data-gr-ext-installed=""
+    style="">
+    <!-- Main navbar -->
+    <div
+      class="navbar navbar-expand-md navbar-dark bg-primary hideif-loggedin"
+      style="background-color: transparent !important; display: none">
+      <div class="navbar-brand wmin-0 mr-5">
+        <a href="/" class="d-inline-block">
+          <img
+            src="./account/common/global_assets/images/logo-dark.svg"
+            alt="logo"
+            width="120" />
+        </a>
+      </div>
+    </div>
+    <!-- /main navbar -->
+
+    <!-- Main navbar -->
+    <div
+      class="navbar navbar-expand-md navbar-dark bg-primary hideif-loggedout"
+      style="">
+      <div class="navbar-brand wmin-0 mr-5">
+        <a href="#domains" class="d-inline-block">
+          <img
+            src="/account/common/global_assets/images/logo-white.svg"
+            alt="logo"
+            width="120" />
+        </a>
+      </div>
+
+      <div class="d-md-none">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar-mobile">
+          <i class="icon-tree5"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-mobile">
+        <!-- <span class="badge bg-white text-primary badge-pill ml-md-3  rl-selected-domain" style="font-size: 16px; padding: 8px 16px;"></span> -->
+        <!--
+			<ul class="navbar-nav mr-md-auto">
+				<li class="nav-item dropdown">
+					<a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
+						<span class="ml-2 rl-selected-domain bg-white text-primary">Domains</span>
+						<i class="icon-arrow-down12"></i>
+					</a>
+					
+                    
+					<div class="dropdown-menu dropdown-content wmin-md-300 domains-dropdown">
+						<div class="dropdown-content-header">
+							<span class="text-uppercase text-muted">Domains</span>
+						</div>
+
+						<div class="dropdown-content-body dropdown-scrollable">
+							<ul class="media-list all-domains-dropdown">
+							</ul>
+                        </div>
+                        
+                        <div class="dropdown-content-footer bg-light">
+							<a href="/pricing/" target="_blank" class="text-grey mr-auto">Add New Domain</a>
+							<a href="/pricing/" target="_blank" class="text-grey"><i class="icon-plus-circle2"></i></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+            -->
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown dropdown-user">
+            <a
+              href="#"
+              class="navbar-nav-link d-flex align-items-center dropdown-toggle"
+              data-toggle="dropdown">
+              <img
+                src="/account/common/global_assets/images/user-thumb.png"
+                class="rounded-circle mr-2"
+                style="
+                  background-color: white;
+                  padding: 2px;
+                  height: 34px;
+                  width: 34px;
+                "
+                height="34"
+                alt="" />
+              <span id="nav-user-name">Arunabh newer</span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="javascript:showAddNewWebsite();" class="dropdown-item"
+                ><i class="icon-plus-circle2"></i> Add New Website</a
+              >
+              <a href="#profile" class="dropdown-item"
+                ><i class="icon-user-plus"></i> My profile</a
+              >
+              <!-- <a href="#overview" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span class="badge badge-pill bg-blue ml-auto">58</span></a> -->
+              <!-- <div class="dropdown-divider"></div>-->
+              <!-- <a href="#apikeys" class="dropdown-item"><i class="icon-cog5"></i> API Keys</a> -->
+              <a href="#partner" class="dropdown-item"
+                ><i class="icon-percent"></i> Partner</a
+              >
+              <a href="#logout" class="dropdown-item"
+                ><i class="icon-switch2"></i> Logout</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- /main navbar -->
+
+    <!-- Secondary navbar -->
+    <div class="navbar navbar-expand-md navbar-light hideif-loggedout" style="">
+      <div class="text-center d-md-none w-100">
+        <button
+          type="button"
+          class="navbar-toggler dropdown-toggle"
+          data-toggle="collapse"
+          data-target="#navbar-navigation">
+          <i class="icon-unfold mr-2"></i>
+          Navigation
+        </button>
+      </div>
+
+      <div class="navbar-collapse collapse" id="navbar-navigation">
+        <div class="mt-3 mt-md-0">
+          <!-- <div class="dropdown-domain-wrapper">
+                    <select class="form-control all-domains-dropdown">
+                        <option selected>Choose domain</option>
+                    </select>
+                </div> -->
+          <a
+            href="#domains"
+            class="navbar-nav-link all-domains-btn"
+            style="color: #333; font-weight: bold">
+            <i class="icon-sort-alpha-asc mr-2"></i>
+            My Websites
+          </a>
+        </div>
+        <ul class="navbar-nav ml-2 site-selected" style="">
+          <li class="nav-item">
+            <a href="#overview" class="navbar-nav-link">
+              <i class="icon-home4 mr-2"></i>
+              Overview
+            </a>
+          </li>
+
+          <li class="nav-item dropdown li-reports">
+            <a
+              href="#"
+              class="navbar-nav-link dropdown-toggle"
+              data-toggle="dropdown">
+              <i class="icon-pie-chart5 mr-2"></i>
+              Reports
+            </a>
+
+            <div class="dropdown-menu border-0">
+              <!-- <a href="#analytics_geo" class="dropdown-item"><i class="icon-location3 text-secondary"></i> Demographics</a> -->
+              <a href="#analytics_usage" class="dropdown-item"
+                ><i class="icon-hour-glass2 text-secondary"></i> Pageviews
+                Impressions</a
+              >
+              <!-- <a href="#analytics_image" class="dropdown-item"><i class="icon-image-compare text-secondary"></i> Image Optimization</a> -->
+              <a
+                href="#analytics_css"
+                class="dropdown-item plat-toggle plat-hide-shopify"
+                ><i class="icon-file-css text-secondary"></i> CSS
+                Optimization</a
+              >
+              <a href="#billing" class="dropdown-item"
+                ><i class="icon-credit-card text-secondary"></i> Billing</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown li-settings">
+            <a
+              href="#"
+              class="navbar-nav-link dropdown-toggle"
+              data-toggle="dropdown">
+              <i class="icon-equalizer mr-2"></i>
+              Settings
+            </a>
+
+            <div class="dropdown-menu border-0">
+              <a
+                href="#cloudflare"
+                class="dropdown-item plat-toggle plat-hide-shopify"
+                ><i class="icon-alignment-unalign text-secondary"></i>
+                Cloudflare Integration</a
+              >
+              <a href="#share" class="dropdown-item"
+                ><i class="icon-users text-secondary"></i> Delegate Access</a
+              >
+              <!-- <a href="#dns_records" class="dropdown-item ns-based-on"><i class="icon-server text-secondary"></i> DNS Records</a> -->
+              <!-- <a href="#georestriction" class="dropdown-item ns-based-on"><i class="icon-earth text-secondary"></i> Geo Restrictions</a> -->
+              <!-- <a href="#origin_conf" class="dropdown-item"><i class="icon-database-insert text-secondary"></i> Manage Origins</a> -->
+              <a href="#rules" class="dropdown-item"
+                ><i class="icon-shuffle text-secondary"></i> Page Rules</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown li-actions">
+            <a
+              href="#"
+              class="navbar-nav-link dropdown-toggle"
+              data-toggle="dropdown">
+              <i class="icon-hammer-wrench mr-2"></i>
+              Action
+            </a>
+            <div class="dropdown-menu border-0">
+              <!-- <a href="#purge" class="dropdown-item"><i class="icon-eraser3 text-secondary"></i> Purge Cache</a> -->
+              <a href="#website_delete" class="dropdown-item"
+                ><i class="icon-trash-alt text-secondary"></i> Delete Website</a
+              >
+            </div>
+          </li>
+
+          <li class="nav-item dropdown li-help">
+            <a
+              href="#"
+              class="navbar-nav-link dropdown-toggle"
+              data-toggle="dropdown">
+              <i class="icon-bubbles10 mr-2"></i>
+              Help
+            </a>
+            <div class="dropdown-menu border-0">
+              <a href="#activity_log" class="dropdown-item"
+                ><i class="icon-racing text-secondary"></i> Log Messages</a
+              >
+              <a onclick="AppNav.reshowTour();" class="dropdown-item"
+                ><i class="icon-spotlight2 text-secondary"></i> Dashboard
+                Tour</a
+              >
+              <a
+                href="https://rabbitloader.com/kb/"
+                target="_blank"
+                class="dropdown-item"
+                ><i class="icon-file-text2 text-secondary"></i> Knowledge
+                Base</a
+              >
+              <a href="javascript:contactSupport();" class="dropdown-item"
+                ><i class="icon-lifebuoy text-secondary"></i> Contact Us</a
+              >
+            </div>
+          </li>
+        </ul>
+
+        <div class="ml-auto mb-3 mb-md-0">
+          <div class="dropdown-date-wrapper" style="">
+            <select
+              class="form-control dropdown-date-select select2-hidden-accessible"
+              tabindex="-1"
+              aria-hidden="true">
+              <option value="7">Last 7 days</option>
+              <option value="28">Last 28 days</option>
+              <option value="90">Last 90 days</option>
+              <option value="CM">Current Month</option>
+              <option value="PM">Previous Month</option></select
+            ><span
+              class="select2 select2-container select2-container--default"
+              dir="ltr"
+              style="width: 100%"
+              ><span class="selection"
+                ><span
+                  class="select2-selection select2-selection--single"
+                  role="combobox"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  tabindex="0"
+                  aria-labelledby="select2-109y-container"
+                  ><span
+                    class="select2-selection__rendered"
+                    id="select2-109y-container"
+                    title="Last 28 days"
+                    >Last 28 days</span
+                  ><span class="select2-selection__arrow" role="presentation"
+                    ><b role="presentation"></b></span></span></span
+              ><span class="dropdown-wrapper" aria-hidden="true"></span
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /secondary navbar -->
+
+    <!-- Page content -->
+    <div class="page-content">
+      <!-- Sidebar --
+        <div class="sidebar sidebar-light sidebar-main sidebar-expand-lg">
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <ul class="nav nav-sidebar">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <-- /Sidebar -->
+
+      <!-- Main content -->
+      <div class="content-wrapper" style="max-width: 1200px; margin: 20px auto">
+        <div class="content pb-0">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="rl-selected-domain">
+                <a href="#domains" title="My Websites"
+                  ><i class="icon-home4 mr-2 text-icon"></i
+                ></a>
+                <span class="text-secondary">/</span> mymandap.in
+                <span class="text-secondary">/</span>
+                <span id="breadcrumb-subpage">Overview</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <!-- Content area -->
+        <div
+          class="content"
+          id="content-area"
+          style="position: static; zoom: 1">
+          <div class="row">
+            <div class="col-md-6 col-xl-4">
+              <!-- Invitation stats white -->
+              <div class="card text-center card-speed-score">
+                <div class="card-body">
+                  <h3 class="">Speed Score</h3>
+                  <p class="mb-4">Best score based on PageSpeed Insights</p>
+                  <!-- <div class="svg-center position-relative mb-1" id="progress_percentage_score"></div> -->
+                  <div class="svg-center" id="progress_percentage_score">
+                    <svg width="150" height="150">
+                      <g transform="translate(75,75)">
+                        <g>
+                          <path
+                            class="arc-foreground"
+                            fill="#5470c6"
+                            d="M0,73A73,73 0 1,1 0,-73A73,73 0 1,1 0,73M0,59A59,59 0 1,0 0,-59A59,59 0 1,0 0,59Z"></path>
+                          <path
+                            d="M0,73A73,73 0 1,1 0,-73A73,73 0 1,1 0,73M0,59A59,59 0 1,0 0,-59A59,59 0 1,0 0,59Z"
+                            style="
+                              fill: rgb(84, 112, 198);
+                              opacity: 0.2;
+                            "></path>
+                          <text
+                            class="d3-text opacity-50"
+                            transform="translate(0,20)"
+                            style="
+                              font-size: 11px;
+                              font-weight: 500;
+                              text-transform: uppercase;
+                              text-anchor: middle;
+                            ">
+                            Out of 100
+                          </text>
+                          <text
+                            class="arc-goal-completed d3-text"
+                            transform="translate(0,0)"
+                            style="
+                              font-size: 23px;
+                              font-weight: 500;
+                              text-anchor: middle;
+                            ">
+                            100
+                          </text>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <!-- </div>
+        <div class="card text-center"> -->
+                <div class="card-body border-top-0 pt-3 speed-score-data">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="text-uppercase text-muted">Pages</div>
+                      <h4 class="font-weight-semibold line-height-1 mt-1 mb-0">
+                        6,856
+                      </h4>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="text-uppercase text-muted">Avg Score</div>
+                      <h4 class="font-weight-semibold line-height-1 mt-1 mb-0">
+                        79
+                      </h4>
+                    </div>
+
+                    <!-- <div class="col-4">
+                        <div class="text-uppercase text-muted">Min Score</div>
+                        <h4 class="font-weight-semibold line-height-1 mt-1 mb-0">0</h4>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- /invitation stats white -->
+            </div>
+            <div class="col-md-6 col-xl-8">
+              <div
+                id="d3-area-stacked-nest-pageview"
+                style="height: 370px"
+                class="card rl-charts-mfe">
+                <div class="card-body">
+                  <h2 class="card-title">24K</h2>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">
+                    Total PageViews: 23 Jan - 20 Feb
+                  </h6>
+                </div>
+                <div
+                  style="
+                    height: 368px;
+                    user-select: none;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                    position: relative;
+                  "
+                  _echarts_instance_="ec_1708436746393">
+                  <div
+                    style="
+                      position: relative;
+                      width: 363px;
+                      height: 261px;
+                      padding: 0px;
+                      margin: 0px;
+                      border-width: 0px;
+                      cursor: default;
+                    ">
+                    <canvas
+                      data-zr-dom-id="zr_0"
+                      width="399"
+                      height="287"
+                      style="
+                        position: absolute;
+                        left: 0px;
+                        top: 0px;
+                        width: 363px;
+                        height: 261px;
+                        user-select: none;
+                        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                        padding: 0px;
+                        margin: 0px;
+                        border-width: 0px;
+                      "></canvas>
+                  </div>
+                  <div
+                    class=""
+                    style="
+                      position: absolute;
+                      display: block;
+                      border-style: solid;
+                      white-space: nowrap;
+                      z-index: 9999999;
+                      box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px;
+                      transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s,
+                        visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s,
+                        transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+                      background-color: rgb(255, 255, 255);
+                      border-width: 1px;
+                      border-radius: 4px;
+                      color: rgb(102, 102, 102);
+                      font: 13px / 20px Roboto, sans-serif;
+                      padding: 10px 15px;
+                      top: 0px;
+                      left: 0px;
+                      transform: translate3d(598px, 23px, 0px);
+                      border-color: rgb(255, 255, 255);
+                      pointer-events: none;
+                      visibility: hidden;
+                      opacity: 0;
+                    ">
+                    Feb 13, 2024<br /><br /><span
+                      style="
+                        display: inline-block;
+                        margin-right: 4px;
+                        border-radius: 10px;
+                        width: 10px;
+                        height: 10px;
+                        background-color: #5470c6;
+                      "></span>
+                    966
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" id="common_stats">
+            <div class="col">
+              <a href="#analytics_css">
+                <div class="card card-body" id="card-body-css_size_pp">
+                  <div class="media">
+                    <div class="mr-3 align-self-center">
+                      <i class="icon-file-css icon-3x text-secondary"></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <h1 class="font-weight-semibold mb-0" id="css_size_pp">
+                        98%
+                      </h1>
+                      <span class="text-uppercase font-size-sm text-muted"
+                        >CSS Optimization <i class="icon-arrow-right7"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#rules">
+                <div class="card card-body" id="card-body-page_rule">
+                  <div class="media">
+                    <div class="mr-3 align-self-center">
+                      <i class="icon-shuffle icon-3x text-secondary"></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <h1 class="font-weight-semibold mb-0" id="page_rule">
+                        1
+                      </h1>
+                      <span class="text-uppercase font-size-sm text-muted"
+                        >Page Rule(s) <i class="icon-arrow-right7"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#share">
+                <div class="card card-body" id="card-body-share">
+                  <div class="media">
+                    <div class="mr-3 align-self-center">
+                      <i class="icon-users icon-3x text-secondary"></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <h1 class="font-weight-semibold mb-0" id="share">1</h1>
+                      <span class="text-uppercase font-size-sm text-muted"
+                        >Delegate Access <i class="icon-arrow-right7"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#billing">
+                <div class="card card-body" id="card-body-plan_title">
+                  <div class="media">
+                    <div class="mr-3 align-self-center">
+                      <i class="icon-credit-card icon-3x text-secondary"></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <h1 class="font-weight-semibold mb-0" id="plan_title">
+                        Hopper 10x
+                      </h1>
+                      <span class="text-uppercase font-size-sm text-muted"
+                        >Billing Plan <i class="icon-arrow-right7"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-header header-elements-inline">
+                  <h3 class="card-title">
+                    Canonical URLs Detected
+                    <i
+                      class="icon-info22 ml-2 text-secondary"
+                      title="Canonical URLs detected"></i>
+                  </h3>
+                  <div class="header-elements"></div>
+                </div>
+                <div
+                  id="table_page_score_wrapper"
+                  class="dataTables_wrapper no-footer">
+                  <div class="datatable-header">
+                    <div id="table_page_score_filter" class="dataTables_filter">
+                      <label
+                        ><span>Filter:</span>
+                        <input
+                          type="search"
+                          class=""
+                          placeholder="Type full words to filter..."
+                          aria-controls="table_page_score"
+                      /></label>
+                    </div>
+                    <div class="dataTables_length" id="table_page_score_length">
+                      <label
+                        ><span>Show:</span>
+                        <select
+                          name="table_page_score_length"
+                          aria-controls="table_page_score"
+                          class="">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select></label
+                      >
+                    </div>
+                  </div>
+                  <div class="datatable-scroll-wrap">
+                    <table
+                      class="table dataTable no-footer"
+                      id="table_page_score"
+                      role="grid"
+                      aria-describedby="table_page_score_info">
+                      <thead>
+                        <tr role="row">
+                          <th
+                            class="sorting_disabled"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Canonical URL (without protocol)">
+                            Canonical URL (without protocol)
+                          </th>
+                          <th
+                            class="sorting_desc"
+                            tabindex="0"
+                            aria-controls="table_page_score"
+                            rowspan="1"
+                            colspan="1"
+                            aria-sort="descending"
+                            aria-label="First Detected: activate to sort column ascending">
+                            First Detected
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="table_page_score"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Cache Refreshed: activate to sort column ascending">
+                            Cache Refreshed
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr role="row" class="odd">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Fwinged-liner-bengali-wedding-makeup%2F"
+                              >mymandap.in/tag/winged-liner-bengali-wedding-makeup/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 6:21 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 6:21 PM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 6:21 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 6:21 PM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Fbeading-embroidery-magenta-bridal-lehenga%2F"
+                              >mymandap.in/tag/beading-embroidery-magenta-bridal-lehenga/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 3:26 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 3:26 PM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 3:26 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 3:26 PM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Fcrispy-curls-for-plus-size-hairstyle%2F"
+                              >mymandap.in/tag/crispy-curls-for-plus-size-hairstyle/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 2:39 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 2:39 PM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 2:40 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 2:40 PM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Ftussar-bridal-silk-sarees%2F"
+                              >mymandap.in/tag/tussar-bridal-silk-sarees/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 2:28 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 2:28 PM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 2:28 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 2:28 PM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Ftopor-shaped-bengali-bride-mukut-designs%2F"
+                              >mymandap.in/tag/topor-shaped-bengali-bride-mukut-designs/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 1:53 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 1:53 PM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 1:53 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 1:53 PM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Fdoor-rangoli-design%2F"
+                              >mymandap.in/tag/door-rangoli-design/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 1:14 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 1:14 PM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 1:14 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 1:14 PM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Fdapper-black-sherwani-for-men%2F"
+                              >mymandap.in/tag/dapper-black-sherwani-for-men/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 12:37 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 12:37 PM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 12:40 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 12:40 PM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Fbengali-wedding-menu-card-ideas%2F"
+                              >mymandap.in/tag/bengali-wedding-menu-card-ideas/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 12:05 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 12:05 PM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 12:05 PM (Asia/Dhaka)"
+                              >Feb 20, 2024, 12:05 PM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Ffairytale-inspired-wedding-invitations%2F"
+                              >mymandap.in/tag/fairytale-inspired-wedding-invitations/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 11:20 AM (Asia/Dhaka)"
+                              >Feb 20, 2024, 11:20 AM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 11:21 AM (Asia/Dhaka)"
+                              >Feb 20, 2024, 11:21 AM</span
+                            >
+                          </td>
+                        </tr>
+                        <tr role="row" class="even">
+                          <td>
+                            <a
+                              href="#pagedetails/mymandap.in%2Ftag%2Ftheme-weavers-designs-gurgaon%2F"
+                              >mymandap.in/tag/theme-weavers-designs-gurgaon/</a
+                            >
+                          </td>
+                          <td class="sorting_1">
+                            <span
+                              title="This page was first detected at Feb 20, 2024, 9:51 AM (Asia/Dhaka)"
+                              >Feb 20, 2024, 9:51 AM</span
+                            >
+                          </td>
+                          <td>
+                            <span
+                              title="Cache for this page was last refreshed a Feb 20, 2024, 9:57 AM (Asia/Dhaka)"
+                              >Feb 20, 2024, 9:57 AM</span
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div
+                      id="table_page_score_processing"
+                      class="dataTables_processing"
+                      style="display: none">
+                      Processing...
+                    </div>
+                  </div>
+                  <div class="datatable-footer">
+                    <div
+                      class="dataTables_info"
+                      id="table_page_score_info"
+                      role="status"
+                      aria-live="polite">
+                      Showing 1 to 10 of 6,856 entries
+                    </div>
+                    <div
+                      class="dataTables_paginate paging_simple_numbers"
+                      id="table_page_score_paginate">
+                      <a
+                        class="paginate_button previous disabled"
+                        aria-controls="table_page_score"
+                        data-dt-idx="0"
+                        tabindex="0"
+                        id="table_page_score_previous"
+                        >←</a
+                      ><span
+                        ><a
+                          class="paginate_button current"
+                          aria-controls="table_page_score"
+                          data-dt-idx="1"
+                          tabindex="0"
+                          >1</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="table_page_score"
+                          data-dt-idx="2"
+                          tabindex="0"
+                          >2</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="table_page_score"
+                          data-dt-idx="3"
+                          tabindex="0"
+                          >3</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="table_page_score"
+                          data-dt-idx="4"
+                          tabindex="0"
+                          >4</a
+                        ><a
+                          class="paginate_button"
+                          aria-controls="table_page_score"
+                          data-dt-idx="5"
+                          tabindex="0"
+                          >5</a
+                        ><span class="ellipsis">…</span
+                        ><a
+                          class="paginate_button"
+                          aria-controls="table_page_score"
+                          data-dt-idx="6"
+                          tabindex="0"
+                          >686</a
+                        ></span
+                      ><a
+                        class="paginate_button next"
+                        aria-controls="table_page_score"
+                        data-dt-idx="7"
+                        tabindex="0"
+                        id="table_page_score_next"
+                        >→</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            var currentPage = {
+              events: {
+                onMount: function () {
+                  DatePicker.showPicker();
+                  APIService.postData(
+                    "report/overview",
+                    "GET",
+                    { domain: "", start_date: "", end_date: "" },
+                    function (response) {
+                      try {
+                        platformHandler.setPlatform(response.data.platform_id);
+                        currentPage.methods.processOverViewResponse(
+                          response.data
+                        );
+                      } catch (e) {
+                        console.warn(e);
+                      }
+                    }
+                  );
+
+                  let domain = getNestedVal(AppNav.data, [
+                    "selected_dr",
+                    "host",
+                  ]);
+                  if (!domain) {
+                    AppNav.wlh("domains");
+                    return;
+                  }
+                  let href_format = `#pagedetails/%%URL%%`;
+                  //let href_format = ``;
+                  TblCanonical.initV2(
+                    `table_page_score`,
+                    domain,
+                    href_format,
+                    "/",
+                    ""
+                  );
+
+                  let common_stats = "";
+                  //common_stats += currentPage.methods.getStatsWidget('0%', 'Loading......', '', 'images3', '');
+                  common_stats += currentPage.methods.getStatsWidget(
+                    "0%",
+                    "Loading...",
+                    "",
+                    "file-css",
+                    ""
+                  );
+                  common_stats += currentPage.methods.getStatsWidget(
+                    "0",
+                    "Loading...",
+                    "",
+                    "shuffle",
+                    ""
+                  );
+                  common_stats += currentPage.methods.getStatsWidget(
+                    "0",
+                    "Loading...",
+                    "",
+                    "users",
+                    ""
+                  );
+                  $("#common_stats").html(common_stats);
+
+                  currentPage.methods.mountCharts();
+                  //date change also calls onMount
+                  if (currentPage.data.charts) {
+                    currentPage.data.charts.setDate(
+                      DatePicker.start_date,
+                      DatePicker.end_date
+                    );
+                  }
+                },
+              },
+              methods: {
+                processOverViewResponse: function (data) {
+                  $("#progress_percentage_score").html("");
+
+                  if (
+                    !data.speed_score ||
+                    !data.speed_score.canonical_url_count
+                  ) {
+                    data.speed_score = {
+                      avg_score: 0,
+                      max_score: 0,
+                      min_score: 0,
+                      canonical_url_count: 0,
+                    };
+                  }
+
+                  //_progressPercentage('#progress_percentage_score', 46, 3, "#0cce6b", data.speed_score.avg_score);
+                  _roundedProgressSingle(
+                    "#progress_percentage_score",
+                    150,
+                    100,
+                    "#5470c6",
+                    data.speed_score.max_score
+                  );
+                  $request_doms = $(".speed-score-data").find("h4");
+                  $request_doms
+                    .eq(0)
+                    .html(
+                      data.speed_score.canonical_url_count.toLocaleString()
+                    );
+                  $request_doms
+                    .eq(1)
+                    .html(Math.round(data.speed_score.avg_score * 100));
+                  $request_doms
+                    .eq(2)
+                    .html(Math.round(data.speed_score.min_score * 100));
+
+                  let common_stats = "";
+                  if (data.image_comp_avg_cp < 0) {
+                    data.image_comp_avg_cp = 0;
+                  }
+                  //common_stats+=currentPage.methods.getStatsWidget(data.image_comp_avg_cp+'%', 'Image Optimization','image_comp_avg_cp','images3', '#analytics_image');
+
+                  if (platformHandler.getPlatform() != "shopify") {
+                    common_stats += currentPage.methods.getStatsWidget(
+                      data.css_size_pp + "%",
+                      "CSS Optimization",
+                      "css_size_pp",
+                      "file-css",
+                      "#analytics_css"
+                    );
+                  }
+                  common_stats += currentPage.methods.getStatsWidget(
+                    data.page_rule_count,
+                    "Page Rule(s)",
+                    "page_rule",
+                    "shuffle",
+                    "#rules"
+                  );
+                  common_stats += currentPage.methods.getStatsWidget(
+                    data.shared_user_count,
+                    "Delegate Access",
+                    "share",
+                    "users",
+                    "#share"
+                  );
+                  common_stats += currentPage.methods.getStatsWidget(
+                    data.plan_details.title,
+                    "Billing Plan",
+                    "plan_title",
+                    "credit-card",
+                    "#billing"
+                  );
+                  $("#common_stats").html(common_stats);
+
+                  RLTour.autoStart();
+                },
+
+                getStatsWidget: function (val, lbl, id, icon, href) {
+                  let html = `
+            <div class="col">
+                <a href="${href}">
+                    <div class="card card-body" id="card-body-${id}">
+                        <div class="media">
+                            <div class="mr-3 align-self-center">
+                                <i class="icon-${icon} icon-3x text-secondary"></i>
+                            </div>
+                            <div class="media-body text-right">
+                                <h1 class="font-weight-semibold mb-0" id="${id}">${val}</h1>
+                                <span class="text-uppercase font-size-sm text-muted">${lbl} <i class="icon-arrow-right7"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>`;
+                  return html;
+                },
+
+                mountCharts: function () {
+                  if (currentPage.data.charts) {
+                    return;
+                  }
+                  let id = getNestedVal(AppNav.data, ["selected_dr", "id"]);
+                  if (!id) {
+                    AppNav.wlh("domains");
+                    return;
+                  }
+
+                  const render = function () {
+                    const charts = window.rlCharts.Charts;
+                    const elPV = document.querySelector(
+                      "#d3-area-stacked-nest-pageview"
+                    );
+                    charts.mountPV(elPV, true);
+
+                    charts.init({
+                      apiHost: `https://api-v2.${window.location.host}/`,
+                      domainID: id,
+                      jwt: RLCookie.getCookie("urauth"),
+                    });
+                    currentPage.data.charts = charts;
+                    currentPage.data.charts.setDate(
+                      DatePicker.start_date,
+                      DatePicker.end_date
+                    );
+                  };
+                  asyncLoadRlCharts(render);
+                },
+              },
+              data: {
+                doc_title: "Overview",
+              },
+            };
+          </script>
+        </div>
+        <!-- /content area -->
+      </div>
+      <!-- /main content -->
+    </div>
+    <!-- /page content -->
+
+    <!-- Footer -->
+    <div class="navbar navbar-expand-lg navbar-light">
+      <div class="text-center d-lg-none w-100">
+        <button
+          type="button"
+          class="navbar-toggler dropdown-toggle"
+          data-toggle="collapse"
+          data-target="#navbar-footer">
+          <i class="icon-unfold mr-2"></i>
+          Footer
+        </button>
+      </div>
+
+      <div class="navbar-collapse collapse" id="navbar-footer">
+        <span class="navbar-text"> © 2024 <a href="/">RabbitLoader</a> </span>
+
+        <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item">
+            <a href="/privacy-dpa-customer/" class="navbar-nav-link"
+              ><i class="icon-file-text2 mr-2"></i> Privacy Policy</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="/terms/" class="navbar-nav-link"
+              ><i class="icon-file-text2 mr-2"></i> Service Terms</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="/kb/" class="navbar-nav-link"
+              ><i class="icon-lifebuoy mr-2"></i> Knowledge Base</a
+            >
+          </li>
+          <!-- <li class="nav-item"><a href="https://rabbitloader.com/kb/" class="navbar-nav-link" target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li> -->
+        </ul>
+      </div>
+    </div>
+    <!-- /footer -->
+
+    <!-- Core JS files -->
+    <script src="/assets/js/rl-cookie.js?v=1708423744"></script>
+    <script src="/account/common/global_assets/js/main/jquery.min.js?v=1708423744"></script>
+    <script src="/account/common/global_assets/js/main/bootstrap.bundle.min.js?v=1708423744"></script>
+    <script src="/account/common/global_assets/js/plugins/loaders/blockui.min.js?v=1708423744"></script>
+    <script src="/account/common/global_assets/js/plugins/notifications/sweet_alert.min.js?v=1708423744"></script>
+    <iframe
+      allow="join-ad-interest-group"
+      data-tagging-id="AW-1014118233"
+      data-load-time="1708436612572"
+      height="0"
+      width="0"
+      style="display: none; visibility: hidden"
+      src="https://td.doubleclick.net/td/rul/1014118233?random=1708436612564&amp;cv=11&amp;fst=1708436612564&amp;fmt=3&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45je42e0v872892017z89169984473za200&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1360&amp;u_h=768&amp;url=https%3A%2F%2Frabbitloader.com%2Faccount%2F%3Futm_source%3Demail&amp;ref=https%3A%2F%2Frabbitloader.com%2Faccount%2F%3Futm_source%3Demail&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=Console%20%7C%20RabbitLoader&amp;npa=0&amp;pscdl=label_only_5&amp;auid=347676116.1708435622&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%2520A(Brand%3B99.0.0.0%7CGoogle%2520Chrome%3B121.0.6167.185%7CChromium%3B121.0.6167.185&amp;uamb=0&amp;uap=Windows&amp;uapv=10.0.0&amp;uaw=0&amp;fledge=1&amp;data=event%3Dgtag.config"></iframe
+    ><iframe
+      allow="join-ad-interest-group"
+      data-tagging-id="AW-11053972169"
+      data-load-time="1708436612665"
+      height="0"
+      width="0"
+      style="display: none; visibility: hidden"
+      src="https://td.doubleclick.net/td/rul/11053972169?random=1708436612657&amp;cv=11&amp;fst=1708436612657&amp;fmt=3&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be42e0v9118563443z8872892017za200&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1360&amp;u_h=768&amp;url=https%3A%2F%2Frabbitloader.com%2Faccount%2F%3Futm_source%3Demail&amp;ref=https%3A%2F%2Frabbitloader.com%2Faccount%2F%3Futm_source%3Demail&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=Console%20%7C%20RabbitLoader&amp;npa=0&amp;pscdl=label_only_5&amp;auid=347676116.1708435622&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%2520A(Brand%3B99.0.0.0%7CGoogle%2520Chrome%3B121.0.6167.185%7CChromium%3B121.0.6167.185&amp;uamb=0&amp;uap=Windows&amp;uapv=10.0.0&amp;uaw=0&amp;fledge=1&amp;data=event%3Dgtag.config"></iframe>
+    <script src="/account/common/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script src="/account/common/global_assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script src="/account/common/global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="/account/common/global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="/account/common/global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <!-- <script src="/account/common/global_assets/js/plugins/visualization/echarts/echarts.min.js"></script> -->
+    <script src="/account/common/global_assets/js/plugins/ui/luxon/luxon.min.v2.1.1.js"></script>
+    <script src="/account/common/js/d3_widgets.js"></script>
+    <script src="/account/common/js/ec_pie_donut.js"></script>
+    <script src="/account/common/js/tbl_canonicals.js"></script>
+    <!-- <script src="/account/common/js/report_geo.js?v=1708423744"></script>
+    <script src="/account/common/js/report_img.js?v=1708423744"></script> -->
+    <script src="/account/common/js/report_css.js"></script>
+    <script src="/account/common/js/app.js"></script>
+    <script src="/account/common/js/custom.js"></script>
+    <link
+      href="https://unpkg.com/intro.js/minified/introjs.min.css"
+      rel="stylesheet" />
+    <script defer="" src="/account/common/js/score.js"></script>
+
+    <script
+      defer=""
+      crossorigin=""
+      src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script
+      defer=""
+      crossorigin=""
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script defer="" src="/account/common/mfe-js/console-user.min.js"></script>
+
+    <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyB7O6o-SZQKtQwI7m7UPdjG6FtlmuV6zMI",
+        authDomain: "rabbitloader.firebaseapp.com",
+        projectId: "rabbitloader",
+        storageBucket: "rabbitloader.appspot.com",
+        messagingSenderId: "130795648139",
+        appId: "1:130795648139:web:f1c549616d8c42caa0908e",
+        measurementId: "G-WJ8NKL8M55",
+      };
+      firebase.initializeApp(firebaseConfig);
+      const fb_analytics = firebase.analytics();
+    </script>
+
+    <script
+      src="https://unpkg.com/intro.js@6.0.0/minified/intro.min.js"
+      type="text/javascript"
+      async="true"></script>
+    <div
+      class="zsiq_floatmain zsiq_theme1 siq_bR"
+      data-id="zsalesiq"
+      style="visibility: hidden; display: block">
+      <div id="zsiq_float" class="zsiq_float" style="font-family: inherit">
+        <div class="zsiq_flt_rel">
+          <em id="zsiq_agtpic" class="zsiq_user"
+            ><img
+              src="https://salesiq.zohopublic.in/rabbitloader/fgravatar/1701841757648_105691000000002180/photo.ls"
+              alt="Gravatar"
+          /></em>
+          <div id="titlediv" class="zsiq_cnt zsiqhide_tip">
+            <div
+              id="zsiq_maintitle"
+              class="zsiq_ellips"
+              title="RabbitLoader Pros!">
+              RabbitLoader Pros!
+            </div>
+            <p
+              id="zsiq_byline"
+              class="zsiq_ellips"
+              title="Talk to a Pagespeed Expert">
+              Talk to a Pagespeed Expert
+            </p>
+            <em class="siqico-close"></em>
+          </div>
+          <em
+            id="zsiq_unreadcnt"
+            class="zsiq_unrdcnt"
+            style="display: none"></em
+          ><em
+            id="zsiq_avcall"
+            class="zsiqmin_unrdcnt zsiq_unrdcnt siqico-mincall"
+            style="display: none"></em>
+        </div>
+      </div>
+    </div>
+    <style id="zsiqcustomcss" data-id="zsalesiq">
+      .zsiq_flt_rel {
+        background-color: #0066cc !important;
+      }
+      .zsiq_seasonal .st2 {
+        fill: #0066cc !important;
+      }
+    </style>
+    <div
+      class="zls-sptwndw siqembed siqtrans siqhide zsiq-mobhgt zsiq-newtheme siq_rht zsiq_size2"
+      embedtheme="8"
+      data-id="zsiqembed"
+      style="visibility: hidden; top: -10000px; display: block">
+      <div id="siqcht" class="zls-prelative">
+        <iframe
+          id="siqiframe"
+          title="SalesIQ Chatwindow"
+          seamless="seamless"
+          height="460"
+          width="100%"
+          scrolling="no"></iframe>
+      </div>
+    </div>
+    <iframe
+      ng-non-bindable=""
+      frameborder="0"
+      hspace="0"
+      marginheight="0"
+      marginwidth="0"
+      scrolling="no"
+      tabindex="0"
+      vspace="0"
+      width="100%"
+      id="I0_1708436701410"
+      name="I0_1708436701410"
+      src="https://rabbitloader.firebaseapp.com/__/auth/iframe?apiKey=AIzaSyB7O6o-SZQKtQwI7m7UPdjG6FtlmuV6zMI&amp;appName=%5BDEFAULT%5D-firebaseui-temp&amp;v=8.10.1&amp;fw=FirebaseUI-web&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.8uXxGUoumbY.O%2Fd%3D1%2Frs%3DAHpOoo96qx3mL4tzGUOa-0q0udyPRqEAoA%2Fm%3D__features__#id=I0_1708436701410&amp;_gfid=I0_1708436701410&amp;parent=https%3A%2F%2Frabbitloader.com&amp;pfname=&amp;rpctoken=26557179"
+      style="position: absolute; top: -100px; width: 1px; height: 1px"></iframe>
+  </body>
+</html>
