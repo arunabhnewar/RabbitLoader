@@ -48,6 +48,10 @@
       type="text/css" />
     <!-- /global stylesheets -->
 
+    <!-- Custom stylesheets -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Custom stylesheets -->
+
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" /> -->
     <meta name="theme-color" content="#6b71fb" />
     <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
@@ -534,7 +538,8 @@
       <!-- Main content -->
       <div class="content-wrapper" style="max-width: 1200px; margin: 20px auto">
         <div class="content pb-0">
-          <div class="row">
+          <!--====== Old Code =======-->
+          <!-- <div class="row">
             <div class="col-12">
               <h1 class="rl-selected-domain">
                 <a href="#domains" title="My Websites"
@@ -545,14 +550,57 @@
                 <span id="breadcrumb-subpage">Overview</span>
               </h1>
             </div>
+          </div> -->
+          <!--====== Old Code =======-->
+
+          <!--====== New Code Start =======-->
+          <div class="row">
+            <div class="col-12">
+              <h1 class="rl-selected-domain px-1">
+                Hi <span>User Name </span> 👋
+              </h1>
+            </div>
           </div>
+          <!--====== New Code End =======-->
         </div>
+
         <!-- Content area -->
         <div
           class="content"
           id="content-area"
           style="position: static; zoom: 1">
           <div class="row">
+            <!--====== Welcome back Start =======-->
+            <div class="col-md-6 col-lg-8 col-xl-8">
+              <div class="welcome_back_card">
+                <div class="d-flex flex-column">
+                  <div class="left_side_content">
+                    <h4>Welcome back 👋 <span>Jaydon Frankie</span></h4>
+                    <p>
+                      If you are going to use a passage of Lorem Ipsum, you need
+                      to be sure there isnt anything.
+                    </p>
+
+                    <button type="button" class="go_now_btn">Go Now</button>
+                  </div>
+                </div>
+
+                <img
+                  class="welcome_image img-fluid"
+                  src="./assets/icons/glass/welcomeImg-svg.png"
+                  alt="featured-app" />
+              </div>
+            </div>
+            <!--====== Welcome back end =======-->
+
+            <!--====== Featured App Start =======-->
+            <div class="col-md-6 col-lg-4 col-xl-4"></div>
+            <!--====== Featured App End=======-->
+          </div>
+
+          <div class="row">
+            <!--====== Speed Score Start =======-->
+            <!--====== Speed Score End =======-->
             <div class="col-md-6 col-xl-4">
               <!-- Invitation stats white -->
               <div class="card text-center card-speed-score">
@@ -627,6 +675,9 @@
               </div>
               <!-- /invitation stats white -->
             </div>
+
+            <!--====== Website Visit Start =======-->
+            <!--====== Website Visit End =======-->
             <div class="col-md-6 col-xl-8">
               <div
                 id="d3-area-stacked-nest-pageview"
