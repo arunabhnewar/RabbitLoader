@@ -219,6 +219,37 @@
   display: block;
 }
 
+.apexcharts-tooltip.apexcharts-theme-light {
+  backdrop-filter: blur(6px);
+  background-color: rgba(249, 250, 251, 0.8);
+  color: rgb(33, 43, 54);
+  box-shadow: rgba(145, 158, 171, 0.24) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.24) -20px 20px 40px -4px;
+  border-radius: 10px;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  text-align: center;
+  font-weight: 700;
+  background-color: rgba(145, 158, 171, 0.08);
+  color: rgb(99, 115, 129);
+  font-size: 12px;
+  padding: 6px;
+  margin-bottom: 4px;
+}
+
+.apexcharts-xaxistooltip {
+  backdrop-filter: blur(6px);
+  background-color: rgba(249, 250, 251, 0.8);
+  border-color: transparent;
+  color: rgb(33, 43, 54);
+  box-shadow: rgba(145, 158, 171, 0.24) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.24) -20px 20px 40px -4px;
+  border-radius: 10px;
+  padding: 9px 10px;
+  transition: 0.15s ease all;
+}
+
 /* ======= Website visits css end  ========= */
 
 /* ========= Custom Media Query ========== */
